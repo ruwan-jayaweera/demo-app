@@ -13,8 +13,11 @@ exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-#upgrade yum
-#sudo yum upgrade
+#update apt
+sudo apt-get update
+
+#install java
+sudo apt install openjdk-8-jre-headless -y
 
 #install git
 sudo apt-get install git -y
